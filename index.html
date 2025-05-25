@@ -52,34 +52,89 @@
         .mobile-menu.open {
             max-height: 500px; /* Adjust based on your content */
         }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#3b82f6, #8b5cf6);
+            border-radius: 10px;
+        }
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse:hover {
+            animation: pulse 2s infinite;
+        }
+        /* Logo styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
     <!-- Navigation -->
-    <nav class="gradient-bg text-white shadow-lg">
+    <nav class="gradient-bg text-white shadow-lg fixed w-full z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
-                    <i class="fas fa-laptop-code text-3xl"></i>
-                    <span class="font-bold text-xl">Joran's ICT Foundation</span>
+                    <div class="logo-container">
+                        <div class="logo-circle">JIF</div>
+                        <div class="logo-text">JORANS ICT FOUNDATION</div>
+                    </div>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link py-2">Home</a>
                     <a href="#about" class="nav-link py-2">About</a>
                     <a href="#programs" class="nav-link py-2">Programs</a>
+                    <a href="#testimonials" class="nav-link py-2">Success Stories</a>
                     <a href="#contact" class="nav-link py-2">Contact</a>
                 </div>
                 <button id="mobileMenuButton" class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
-            
+                    
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="mobile-menu md:hidden">
                 <div class="pt-4 pb-2 space-y-2">
                     <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Home</a>
                     <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">About</a>
                     <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Programs</a>
+                    <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Success Stories</a>
                     <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Contact</a>
                 </div>
             </div>
@@ -87,13 +142,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white py-20">
+    <section id="home" class="gradient-bg text-white pt-32 pb-20">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-text">Empowering Through Technology</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Bridging the digital divide by providing ICT education, resources, and opportunities to underserved communities.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#programs" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">Our Programs</a>
-                <a href="#contact" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">Get Involved</a>
+                <a href="#programs" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 pulse">Our Programs</a>
+                <a href="#contact" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition duration-300 pulse">Get Involved</a>
+            </div>
+            <div class="mt-16 floating">
+                <i class="fas fa-arrow-down text-3xl text-white"></i>
             </div>
         </div>
     </section>
@@ -108,21 +166,21 @@
                     <p class="text-gray-600 mb-4">We believe that access to technology and digital literacy are fundamental rights in today's world. Our mission is to bridge the digital divide by providing education, resources, and opportunities to those who need them most.</p>
                     <p class="text-gray-600 mb-6">Since our inception, we've impacted over 5,000 lives through our various programs and initiatives.</p>
                     <div class="flex flex-wrap gap-4">
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px] card-hover">
                             <div class="text-blue-600 text-3xl mb-2">
                                 <i class="fas fa-users"></i>
                             </div>
                             <h3 class="font-bold">5,000+</h3>
                             <p class="text-sm text-gray-600">People Impacted</p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px] card-hover">
                             <div class="text-purple-600 text-3xl mb-2">
                                 <i class="fas fa-laptop"></i>
                             </div>
                             <h3 class="font-bold">50+</h3>
                             <p class="text-sm text-gray-600">Training Programs</p>
                         </div>
-                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px] card-hover">
                             <div class="text-pink-600 text-3xl mb-2">
                                 <i class="fas fa-globe"></i>
                             </div>
@@ -132,10 +190,10 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                             alt="Students learning ICT" 
-                             class="w-full h-auto object-cover">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                              alt="Students learning ICT"
+                              class="w-full h-auto object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Our Vision</h3>
                             <p class="text-gray-600">A world where everyone has equal access to technology and the skills to use it effectively for personal and community development.</p>
@@ -153,7 +211,7 @@
                 <h2 class="text-3xl font-bold mb-4">Our Programs</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">We offer a variety of programs designed to meet the diverse needs of our community members at different stages of their digital journey.</p>
             </div>
-            
+                    
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Program 1 -->
                 <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
@@ -173,9 +231,11 @@
                             <i class="fas fa-check text-green-500 mr-2"></i> Certification upon completion
                         </li>
                     </ul>
-                    <a href="#contact" class="text-blue-600 font-semibold hover:underline">Learn More →</a>
+                    <a href="#contact" class="text-blue-600 font-semibold hover:underline flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-                
+                                
                 <!-- Program 2 -->
                 <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
                     <div class="text-purple-600 text-4xl mb-4">
@@ -194,9 +254,11 @@
                             <i class="fas fa-check text-green-500 mr-2"></i> Job placement assistance
                         </li>
                     </ul>
-                    <a href="#contact" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+                    <a href="#contact" class="text-purple-600 font-semibold hover:underline flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-                
+                                
                 <!-- Program 3 -->
                 <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
                     <div class="text-pink-600 text-4xl mb-4">
@@ -215,19 +277,31 @@
                             <i class="fas fa-check text-green-500 mr-2"></i> Ongoing support
                         </li>
                     </ul>
-                    <a href="#contact" class="text-pink-600 font-semibold hover:underline">Learn More →</a>
+                    <a href="#contact" class="text-pink-600 font-semibold hover:underline flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
-            
+                    
             <div class="mt-16 text-center">
                 <h3 class="text-2xl font-bold mb-4">Special Initiatives</h3>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-blue-50 p-6 rounded-lg text-left">
-                        <h4 class="font-bold mb-2 text-blue-800">Women in Tech</h4>
+                    <div class="bg-blue-50 p-6 rounded-lg text-left card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-female text-blue-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-blue-800">Women in Tech</h4>
+                        </div>
                         <p class="text-gray-700">Encouraging female participation in technology through mentorship and scholarships.</p>
                     </div>
-                    <div class="bg-purple-50 p-6 rounded-lg text-left">
-                        <h4 class="font-bold mb-2 text-purple-800">Rural Digital Hubs</h4>
+                    <div class="bg-purple-50 p-6 rounded-lg text-left card-hover">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-home text-purple-600 text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-purple-800">Rural Digital Hubs</h4>
+                        </div>
                         <p class="text-gray-700">Establishing technology access points in underserved rural communities.</p>
                     </div>
                 </div>
@@ -236,16 +310,16 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="py-20 bg-gray-50">
+    <section id="testimonials" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold mb-4">Success Stories</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Hear from some of the people whose lives we've transformed through technology.</p>
             </div>
-            
+                    
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
                             <i class="fas fa-star"></i>
@@ -264,9 +338,9 @@
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
                             <i class="fas fa-star"></i>
@@ -285,9 +359,9 @@
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Testimonial 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-xl mr-2">
                             <i class="fas fa-star"></i>
@@ -301,7 +375,7 @@
                     <div class="flex items-center">
                         <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Grace M." class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold">Grace M."</h4>
+                            <h4 class="font-bold">Grace M.</h4>
                             <p class="text-gray-500 text-sm">Retired Nurse</p>
                         </div>
                     </div>
@@ -318,7 +392,7 @@
                     <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
                     <p class="text-gray-600 max-w-2xl mx-auto">Have questions or want to get involved? Reach out to us and we'll get back to you as soon as possible.</p>
                 </div>
-                
+                                
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden">
                     <div class="md:flex">
                         <div class="md:w-1/2 gradient-bg text-white p-10">
@@ -352,7 +426,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                                                    
                             <div class="mt-10">
                                 <h4 class="font-bold mb-4">Follow Us</h4>
                                 <div class="flex space-x-4">
@@ -371,7 +445,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+                                                
                         <div class="md:w-1/2 p-10">
                             <form id="contactForm" class="space-y-6">
                                 <div>
@@ -414,19 +488,27 @@
             <p class="text-gray-600 max-w-2xl mx-auto mb-8">Subscribe to our newsletter to receive updates about our programs, events, and success stories.</p>
             <div class="max-w-md mx-auto flex">
                 <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <button class="gradient-bg text-white px-6 py-3 rounded-r-lg font-medium hover:opacity-90 transition duration-300">Subscribe</button>
+                <button class="gradient-bg text-white px-6 py-3 rounded-r-lg font-medium hover:opacity-90 transition duration-300">
+                    Subscribe
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i class="fas fa-laptop-code mr-2"></i> Joran's ICT Foundation
-                    </h3>
+                    <div class="logo-container mb-4">
+                        <div class="logo-circle">JIF</div>
+                        <div class="logo-text">JORANS ICT FOUNDATION</div>
+                    </div>
                     <p class="text-gray-400">Empowering communities through technology education and access.</p>
                 </div>
                 <div>
@@ -451,105 +533,130 @@
                     <h4 class="font-bold mb-4">Legal</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
-        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-    <p class="text-gray-400 mb-4 md:mb-0">© 2023 Joran's ICT Foundation. All rights reserved.</p>
-    <div class="flex space-x-6">
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-  </div>
-</div>
-</footer>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">© 2023 Joran's ICT Foundation. All rights reserved.</p>
+                    <p class="text-gray-500 text-sm mt-2">Website designed by SSENYONGA JORAM</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<script>
-  // Mobile menu toggle functionality
-  const mobileMenuButton = document.getElementById('mobileMenuButton');
-  const mobileMenu = document.getElementById('mobileMenu');
-  let menuOpen = false;
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
 
-  mobileMenuButton.addEventListener('click', function() {
-    menuOpen = !menuOpen;
-    
-    if (menuOpen) {
-      mobileMenu.classList.add('open');
-      mobileMenuButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
-    } else {
-      mobileMenu.classList.remove('open');
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
-    }
-  });
-
-  // Close menu when clicking on a link
-  const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
-  mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      menuOpen = false;
-      mobileMenu.classList.remove('open');
-      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
-    });
-  });
-
-  // Simple form submission handling
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // In a real implementation, you would send this data to your server
-    // For this demo, we'll just show a success message
-    console.log('Form submitted:', {name, email, subject, message});
-    
-    // Show success message
-    document.getElementById('formSuccess').classList.remove('hidden');
-    
-    // Reset form
-    this.reset();
-    
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-      document.getElementById('formSuccess').classList.add('hidden');
-    }, 5000);
-    
-    // Note: In a real implementation, you would need server-side code to actually send the email
-    // This would typically involve a backend service or using something like Formspree, EmailJS, etc.
-    // The email would be sent to joransjoram@gmail.com as requested
-  });
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
+        mobileMenuButton.addEventListener('click', function() {
+            menuOpen = !menuOpen;
+                
+            if (menuOpen) {
+                mobileMenu.classList.add('open');
+                mobileMenuButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+            } else {
+                mobileMenu.classList.remove('open');
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            }
         });
-      }
-    });
-  });
-</script>
+
+        // Close menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+            });
+        });
+
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+                
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+                
+            // In a real implementation, you would send this data to your server
+            // For this demo, we'll just show a success message
+            console.log('Form submitted:', {name, email, subject, message});
+                
+            // Show success message
+            document.getElementById('formSuccess').classList.remove('hidden');
+                
+            // Reset form
+            this.reset();
+                
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').classList.add('hidden');
+            }, 5000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                        
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                        
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add floating animation to elements with the 'floating' class
+        const floatingElements = document.querySelectorAll('.floating');
+        floatingElements.forEach(el => {
+            el.style.animationDelay = `${Math.random() * 2}s`;
+        });
+    </script>
 </body>
 </html>
