@@ -43,6 +43,15 @@
                 background-position: 200% center;
             }
         }
+        /* Mobile menu styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 500px; /* Adjust based on your content */
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -60,9 +69,19 @@
                     <a href="#programs" class="nav-link py-2">Programs</a>
                     <a href="#contact" class="nav-link py-2">Contact</a>
                 </div>
-                <button class="md:hidden focus:outline-none">
+                <button id="mobileMenuButton" class="md:hidden focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="pt-4 pb-2 space-y-2">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">About</a>
+                    <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Programs</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-700">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -282,7 +301,7 @@
                     <div class="flex items-center">
                         <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Grace M." class="w-12 h-12 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold">Grace M.</h4>
+                            <h4 class="font-bold">Grace M."</h4>
                             <p class="text-gray-500 text-sm">Retired Nurse</p>
                         </div>
                     </div>
@@ -320,7 +339,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-bold">Phone</h4>
-                                        <p>+1 (555) 123-4567</p>
+                                        <p>+256 700000000</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -329,7 +348,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-bold">Address</h4>
-                                        <p>123 Tech Street, Digital City, 10001</p>
+                                        <p>Enttebbe</p>
                                     </div>
                                 </div>
                             </div>
@@ -432,85 +451,105 @@
                     <h4 class="font-bold mb-4">Legal</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Joran's ICT Foundation. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-gray-400 mb-4 md:mb-0">© 2023 Joran's ICT Foundation. All rights reserved.</p>
+    <div class="flex space-x-6">
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</footer>
 
-    <script>
-        // Simple form submission handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real implementation, you would send this data to your server
-            // For this demo, we'll just show a success message
-            console.log('Form submitted:', {name, email, subject, message});
-            
-            // Show success message
-            document.getElementById('formSuccess').classList.remove('hidden');
-            
-            // Reset form
-            this.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('formSuccess').classList.add('hidden');
-            }, 5000);
-            
-            // Note: In a real implementation, you would need server-side code to actually send the email
-            // This would typically involve a backend service or using something like Formspree, EmailJS, etc.
-            // The email would be sent to joransjoram@gmail.com as requested
-        });
+<script>
+  // Mobile menu toggle functionality
+  const mobileMenuButton = document.getElementById('mobileMenuButton');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let menuOpen = false;
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+  mobileMenuButton.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenuButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+    }
+  });
 
-        // Mobile menu toggle (would need additional HTML/CSS for full implementation)
-        const mobileMenuButton = document.querySelector('button.md\\:hidden');
-        mobileMenuButton.addEventListener('click', function() {
-            // In a full implementation, this would toggle a mobile menu
-            alert('Mobile menu would open here in a full implementation');
+  // Close menu when clicking on a link
+  const mobileMenuLinks = document.querySelectorAll('#mobileMenu a');
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      mobileMenuButton.innerHTML = '<i class="fas fa-bars text-2xl"></i>';
+    });
+  });
+
+  // Simple form submission handling
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // In a real implementation, you would send this data to your server
+    // For this demo, we'll just show a success message
+    console.log('Form submitted:', {name, email, subject, message});
+    
+    // Show success message
+    document.getElementById('formSuccess').classList.remove('hidden');
+    
+    // Reset form
+    this.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      document.getElementById('formSuccess').classList.add('hidden');
+    }, 5000);
+    
+    // Note: In a real implementation, you would need server-side code to actually send the email
+    // This would typically involve a backend service or using something like Formspree, EmailJS, etc.
+    // The email would be sent to joransjoram@gmail.com as requested
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
         });
-    </script>
+      }
+    });
+  });
+</script>
 </body>
 </html>
