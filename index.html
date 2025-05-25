@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joran's ICT Foundation - Empowering Through Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .animated-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-laptop-code text-3xl"></i>
+                    <span class="font-bold text-xl">Joran's ICT Foundation</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link py-2">Home</a>
+                    <a href="#about" class="nav-link py-2">About</a>
+                    <a href="#programs" class="nav-link py-2">Programs</a>
+                    <a href="#contact" class="nav-link py-2">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animated-text">Empowering Through Technology</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Bridging the digital divide by providing ICT education, resources, and opportunities to underserved communities.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#programs" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">Our Programs</a>
+                <a href="#contact" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">Get Involved</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">About Joran's ICT Foundation</h2>
+                    <p class="text-gray-600 mb-4">Founded in 2023, Joran's ICT Foundation is a non-profit organization dedicated to empowering individuals and communities through information and communication technology.</p>
+                    <p class="text-gray-600 mb-4">We believe that access to technology and digital literacy are fundamental rights in today's world. Our mission is to bridge the digital divide by providing education, resources, and opportunities to those who need them most.</p>
+                    <p class="text-gray-600 mb-6">Since our inception, we've impacted over 5,000 lives through our various programs and initiatives.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                            <div class="text-blue-600 text-3xl mb-2">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="font-bold">5,000+</h3>
+                            <p class="text-sm text-gray-600">People Impacted</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                            <div class="text-purple-600 text-3xl mb-2">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3 class="font-bold">50+</h3>
+                            <p class="text-sm text-gray-600">Training Programs</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center flex-1 min-w-[150px]">
+                            <div class="text-pink-600 text-3xl mb-2">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="font-bold">10+</h3>
+                            <p class="text-sm text-gray-600">Communities Reached</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                             alt="Students learning ICT" 
+                             class="w-full h-auto object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Our Vision</h3>
+                            <p class="text-gray-600">A world where everyone has equal access to technology and the skills to use it effectively for personal and community development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Our Programs</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer a variety of programs designed to meet the diverse needs of our community members at different stages of their digital journey.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Digital Literacy Program</h3>
+                    <p class="text-gray-600 mb-4">Basic computer skills training for beginners, covering essential software, internet usage, and online safety.</p>
+                    <ul class="mb-4 text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> 12-week course
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> Hands-on training
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> Certification upon completion
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-semibold hover:underline">Learn More →</a>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Coding Bootcamp</h3>
+                    <p class="text-gray-600 mb-4">Intensive training in web and mobile app development for aspiring tech professionals.</p>
+                    <ul class="mb-4 text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> 6-month program
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> HTML, CSS, JavaScript
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> Job placement assistance
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md transition-all duration-300 card-hover">
+                    <div class="text-pink-600 text-4xl mb-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Teacher Training</h3>
+                    <p class="text-gray-600 mb-4">Equipping educators with digital tools and methodologies to enhance classroom learning.</p>
+                    <ul class="mb-4 text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> 8-week workshop
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> EdTech integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i> Ongoing support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-pink-600 font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-4">Special Initiatives</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-blue-50 p-6 rounded-lg text-left">
+                        <h4 class="font-bold mb-2 text-blue-800">Women in Tech</h4>
+                        <p class="text-gray-700">Encouraging female participation in technology through mentorship and scholarships.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg text-left">
+                        <h4 class="font-bold mb-2 text-purple-800">Rural Digital Hubs</h4>
+                        <p class="text-gray-700">Establishing technology access points in underserved rural communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Success Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from some of the people whose lives we've transformed through technology.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"The coding bootcamp completely changed my career trajectory. I went from unemployed to a junior developer in just 7 months!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah K.</h4>
+                            <p class="text-gray-500 text-sm">Web Developer at TechSolutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"As a teacher, the training helped me bring technology into my classroom in ways I never imagined possible. My students are more engaged than ever."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-gray-500 text-sm">High School Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">"At 65, I never thought I'd learn to use a computer. The patient instructors at Joran's Foundation proved me wrong!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Grace M." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Grace M.</h4>
+                            <p class="text-gray-500 text-sm">Retired Nurse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Have questions or want to get involved? Reach out to us and we'll get back to you as soon as possible.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-1/2 gradient-bg text-white p-10">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="text-xl mr-4 mt-1">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Email</h4>
+                                        <p>joransjoram@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-xl mr-4 mt-1">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Phone</h4>
+                                        <p>+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-xl mr-4 mt-1">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Address</h4>
+                                        <p>123 Tech Street, Digital City, 10001</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-10">
+                                <h4 class="font-bold mb-4">Follow Us</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="text-white hover:text-gray-200 text-xl">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="text-white hover:text-gray-200 text-xl">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="text-white hover:text-gray-200 text-xl">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="text-white hover:text-gray-200 text-xl">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2 p-10">
+                            <form id="contactForm" class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" required>
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                                    <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" required>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-300" required></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 flex items-center justify-center">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane ml-2"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="formSuccess" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
+                                <i class="fas fa-check-circle mr-2"></i> Your message has been sent successfully!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Subscribe to our newsletter to receive updates about our programs, events, and success stories.</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="gradient-bg text-white px-6 py-3 rounded-r-lg font-medium hover:opacity-90 transition duration-300">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-laptop-code mr-2"></i> Joran's ICT Foundation
+                    </h3>
+                    <p class="text-gray-400">Empowering communities through technology education and access.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#programs" class="text-gray-400 hover:text-white transition duration-300">Programs</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Programs</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Digital Literacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Coding Bootcamp</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Teacher Training</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Women in Tech</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Joran's ICT Foundation. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real implementation, you would send this data to your server
+            // For this demo, we'll just show a success message
+            console.log('Form submitted:', {name, email, subject, message});
+            
+            // Show success message
+            document.getElementById('formSuccess').classList.remove('hidden');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').classList.add('hidden');
+            }, 5000);
+            
+            // Note: In a real implementation, you would need server-side code to actually send the email
+            // This would typically involve a backend service or using something like Formspree, EmailJS, etc.
+            // The email would be sent to joransjoram@gmail.com as requested
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (would need additional HTML/CSS for full implementation)
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        mobileMenuButton.addEventListener('click', function() {
+            // In a full implementation, this would toggle a mobile menu
+            alert('Mobile menu would open here in a full implementation');
+        });
+    </script>
+</body>
+</html>
